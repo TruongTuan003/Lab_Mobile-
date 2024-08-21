@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai3_JS_AvgScore</title>
+</head>
+<script>
+    function checkWinner(avgDolphins, avgKoalas) {
+        if (avgDolphins >= 100 && avgKoalas >= 100) {
+            if (avgDolphins > avgKoalas) {
+                console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+            } else if (avgKoalas > avgDolphins) {
+                console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+            } else {
+                console.log(`Draw (${avgDolphins} vs. ${avgKoalas})`);
+            }
+        }
+        if (avgDolphins >= 100 && avgKoalas < 100)
+            console.log("Dolphins win the trophy!");
+        if (avgDolphins < 100 && avgKoalas >= 100)
+            console.log("Koalas win the trophy!");
+        else {
+            console.log("No team wins the trophy!");
+        }
+    }
+    console.log("\nData 1:");
+    const avgDolphins1 = (96 + 108 + 89) / 3;
+    const avgKoalas1 = (88 + 91 + 110) / 3;
+
+    console.log("Dolphins1' average score: ", avgDolphins1);
+    console.log("Koalas1' average score: ", avgKoalas1);
+    checkWinner(avgDolphins1, avgKoalas1);
+
+    console.log("\nData 2:");
+    const avgDolphins2 = (97 + 112 + 101) / 3;
+    const avgKoalas2 = (109 + 95 + 123) / 3;
+
+    console.log("Dolphins2' average score: ", avgDolphins2);
+    console.log("Koalas2' average score: ", avgKoalas2);
+    checkWinner(avgDolphins2, avgKoalas2);
+
+    console.log("\nData 3:");
+    const avgDolphins3 = (97 + 112 + 101) / 3;
+    const avgKoalas3 = (109 + 95 + 106) / 3;
+
+    console.log("Dolphins3' average score: ", avgDolphins3);
+    console.log("Koalas3' average score: ", avgKoalas3);
+    checkWinner(avgDolphins3, avgKoalas3);
+</script>
+
+<body>
+
+</body>
+
+</html>
