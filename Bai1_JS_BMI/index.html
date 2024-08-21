@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai1_JS_BMI</title>
+</head>
+<script>
+    //Data test
+    const markMass1 = 78;
+    const markHeight1 = 1.69;
+    const johnMass1 = 92;
+    const johnHeight1 = 1.95;
+
+    const markMass2 = 95;
+    const markHeight2 = 1.88;
+    const johnMass2 = 85;
+    const johnHeight2 = 1.76;
+
+    const markBMI1 = markMass1 / (markHeight1 * markHeight1);
+    const johnBMI1 = johnMass1 / (johnHeight1 * johnHeight1);
+
+    const markBMI2 = markMass2 / (markHeight2 * markHeight2);
+    const johnBMI2 = johnMass2 / (johnHeight2 * johnHeight2); 
+
+
+    const markBMI_pow1 = markMass1 / Math.pow(markHeight1, 2);
+    const johnBMI_pow1 = johnMass1 / Math.pow(johnHeight1, 2);
+
+    const markBMI_pow2 = markMass2 / Math.pow(markHeight2, 2);
+    const johnBMI_pow2 = johnMass2 / Math.pow(johnHeight2, 2);
+
+    const markHigherBMI1 = markBMI1 > johnBMI1;
+    const markHigherBMI2 = markBMI2 > johnBMI2;
+
+
+    console.log("Data 1:");
+    console.log("Mark's BMI (version 1):", markBMI1);
+    console.log("John's BMI (version 1):", johnBMI1);
+    console.log("Mark's BMI (version 2):", markBMI_pow1);
+    console.log("John's BMI (version 2):", johnBMI_pow1);
+    console.log("Mark has a higher BMI than John:", markHigherBMI1);
+
+    console.log("\nData 2:");
+    console.log("Mark's BMI (version 1):", markBMI2);
+    console.log("John's BMI (version 1):", johnBMI2);
+    console.log("Mark's BMI (version 2):", markBMI_pow2);
+    console.log("John's BMI (version 2):", johnBMI_pow2);
+    console.log("Mark has a higher BMI than John:", markHigherBMI2);
+</script>
+
+<body>
+
+</body>
+
+</html>
