@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai11</title>
+</head>
+<body>
+    <script>
+            let players1 = ['Neuer', 'Pavard', 'Suele', 'Alaba', 'Davies', 'Kimmich', 'Goretzka', 'Musiala', 'Gnabry', 'Coman'];
+            let players2 = ['Ederson', 'Walker', 'Stones', 'Dias', 'Cancelo', 'Rodri', 'Bernardo', 'De Bruyne', 'Mahrez', 'Foden'];
+            let gk = players1[0]; // Neuer
+            let fieldPlayers = players1.slice(1); // ['Pavard', 'Suele', ...]
+            let allPlayers = [...players1, ...players2];
+            let players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+            let game = {
+                odds: {
+                    team1: 1.33,
+                    draw: 3.25,
+                    team2: 6.5
+                }
+            };
+            let team1 = game.odds.team1;
+            let draw = game.odds.draw;
+            let team2 = game.odds.team2;
+            function printGoals(...players) {
+                console.log(players.join(', '));
+                console.log(`A total of ${players.length} goals were scored`);
+            }
+            // Sử dụng toán tử spread để tìm giá trị nhỏ nhất trong odds
+            const [teamWithLowestOdds] = Object.entries(game.odds)
+                .sort((a, b) => a[1] - b[1])
+                .map(([team, odd]) => team);
+
+            console.log(`Team ${teamWithLowestOdds} is more likely to win`);
+    </script>
+</body>
+</html>
