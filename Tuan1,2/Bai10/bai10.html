@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai10</title>
+</head>
+<body>
+
+<input type="hidden" id="secretNumber" value="1">
+<input type="hidden" id="score" value="20">
+<input type="hidden" id="highscore" value="0">
+
+<p class="message">Start guessing...</p>
+<p class="number">?</p>
+<p class="score">20</p>
+<input type="text" class="guess">
+<button class="again">Again!</button>
+</body>
+<script>
+
+    let secretNumber = Math.trunc(Math.random() * 20) + 1;
+    let score = 20;
+    let highscore = 0;
+
+    const message = document.querySelector('.message').textContent;
+    const number = document.querySelector('.number');
+    const scoreEl = document.querySelector('.score');
+    const guessEl = document.querySelector('.guess');
+    const body = document.querySelector('body');
+    const btnAgain = document.querySelector('.again');
+
+    btnAgain.addEventListener('click', function () {
+                // Reset giá trị ban đầu
+                secretNumber = Math.trunc(Math.random() * 20) + 1;
+                score = 20;
+
+                // Reset giao diện
+                message.textContent = 'Start guessing...';
+                number.textContent = '?';
+                scoreEl.textContent = score;
+                guessEl.value = '';
+
+                // Reset style
+                body.style.backgroundColor = '#222';
+                number.style.width = '15rem';
+            });
+    </script>
+</html>
