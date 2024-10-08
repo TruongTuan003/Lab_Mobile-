@@ -1,70 +1,34 @@
-import React, { useState } from 'react';
-import { FlatList, TouchableOpacity, View, Text } from 'react-native';
-
-
-const App = () => {
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
- const createUserApi = "https://66fc914ac3a184a84d175710.mockapi.io/Job"
- const [user, setUser] = useState({
-  name: "",
-  email: "",
-  phone: ""
-})
-
-  const handleAdd = async (event) () => {
-    event.preventDefault();
-    console.log(user)
-    try {
-        setIsLoading(true);
-        const response = await fetch(createUserApi, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(user),
-        });
-
-        if (response.ok) {
-            console.log('Form submitted successfully!');
-            setUser({name: "",email: "",phone: ""})
-            navigate('/show-user');
-        } else {
-            console.error('Form submission failed!');
-        }
-
-    } catch (error) {
-        setError(error.message);
-    } finally{
-        setIsLoading(false);
-    }
-  };
-
+import {
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  TextInput,
+  Image,
+} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// You can import supported modules from npm
+import Home from './components/home';
+import Add from './components/Add';
+import Delete from './components/Delete';
+import Update from './components/Update';
+import Display from './components/Display';
+// or any files within the Snack
+const Stack = createNativeStackNavigator();
+export default function App() {
   return (
-    <View style= { styles.button}>
-      <TouchableOpacity onPress={handleAdd} style = { styles.button1}>
-        <Text>ADD</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={handleAdd} style = { styles.button1}>
-        <Text>Update</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={handleAdd} style = { styles.button1}>
-        <Text>Delete</Text>
-      </TouchableOpacity>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Add" component={Add} />
+        <Stack.Screen name="Delete" component={Delete} />
+        <Stack.Screen name="Update" component={Update} />
+        <Stack.Screen name="Display" component={Display} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
-const styles = {
-  button: {
-    padding: 10,
-    backgroundColor: 'lightblue',
-    alignItems: 'center',
-  },
-  button1: {
-    padding: 10,
-    backgroundColor: 'lightgreen',
-    alignItems: 'center',
-  },
-};
+}
 
-export default App;
+const styles = StyleSheet.create({});
