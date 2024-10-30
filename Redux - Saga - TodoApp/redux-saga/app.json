@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "todoapp",
-    "slug": "snack-4a9b5f61-db7b-49b9-ad8a-038c10a9449f",
+    "name": "redux-saga",
+    "slug": "snack-3b125f75-4615-4334-bc22-e5d6afdd4a9f",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
